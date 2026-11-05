@@ -22,28 +22,28 @@ def classify_question(state: ChatState):
         return "other"
 
 
-# Step 2: Python node
+#  Python node
 def python_node(state: ChatState):
     return {
         "response": "Your question is related to Python."
     }
 
 
-# Step 3: LangGraph node
+#  LangGraph node
 def langgraph_node(state: ChatState):
     return {
         "response": "Your question is related to LangGraph."
     }
 
 
-# Step 4: Other questions
+# if Other questions
 def other_node(state: ChatState):
     return {
         "response": "Sorry, I can only help with Python and LangGraph."
     }
 
 
-# Build graph
+# Builder
 builder = StateGraph(ChatState)
 
 builder.add_node("python_node", python_node)
